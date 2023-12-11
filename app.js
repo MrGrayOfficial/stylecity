@@ -5,12 +5,14 @@ const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 const Products = require("./demodata/products");
 const dotenv = require("dotenv");
+const cors = require("cors");
 
 const PORT = 8080 || process.env.PORT;
 
 dotenv.config();
 
 app.use(express.json());
+app.use(cors());
 
 // ************** Home Page API ********************
 
