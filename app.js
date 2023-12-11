@@ -6,7 +6,6 @@ const jwt = require("jsonwebtoken");
 const Products = require("./demodata/products");
 const dotenv = require("dotenv");
 
-
 const PORT = 8080 || process.env.PORT;
 
 dotenv.config();
@@ -100,6 +99,24 @@ app.post("/api/login", (req, res) => {
 
 // })
 
+// ******************Getting Products API******************
+
+app.get("/api/products", async (req, res) => {
+  try {
+    const products = await db.Products.find({});
+
+    if (products) {
+      console.log("Data sent successfully!");
+      res.status(200).json(products);
+    } else {
+      console.log("Data not found!");
+      res.status(500).json({ msg: "Data not found!" });
+    }
+  } catch {
+    console.log("Database find error!");
+    res.status(500).json({ msg: "Database find error!" });
+  }
+});
 
 // ************** Running the server ********************
 

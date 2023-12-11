@@ -4,7 +4,7 @@ const Products = [
         category: "womens",
         subcategory: "dress",
         description: "Stylish dress for women",
-        image: "../../../public/images/womens/dresses/dress1.pg",
+        image: "../../../public/images/womens/dresses/dress1.jpg",
         price: 7990,
         rating: 4.9
     },
